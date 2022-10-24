@@ -1,3 +1,6 @@
+using CrimeEvent;
+using CrimeEventsMongoDB.MongoDBSettings;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddProfilesCollection();
+builder.Services.AddScopedConfiguration();
+builder.Services.Configure<CrimeEventDBSettings>(
+    builder.Configuration.GetSection("CrimesStoreDB"));
 
 var app = builder.Build();
 
