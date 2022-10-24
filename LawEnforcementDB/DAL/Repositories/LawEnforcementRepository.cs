@@ -11,7 +11,7 @@ namespace LawEnforcementSqlDB.DAL.Repositories
         {
             _context = context;
         }
-        public async Task AddAsync(LawEnforcementModel model) => await _context.AddRangeAsync(model);
+        public async Task AddAsync(LawEnforcementModel model) => await _context.AddAsync(model);
 
         public async Task<IEnumerable<LawEnforcementModel>> GetAllAsync()
         {
