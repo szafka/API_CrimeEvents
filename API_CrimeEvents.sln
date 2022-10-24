@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrimeEvent", "CrimeEvent\Cr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrimeEventsMongoDB", "CrimeEventsMongoDB\CrimeEventsMongoDB.csproj", "{D58ABA88-C99A-4F56-A7C8-35329113A45E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawEnforcement", "LawEnforcement\LawEnforcement.csproj", "{AE26BA93-B9AA-4586-8667-574E08B1F23A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawEnforcementDB", "LawEnforcementDB\LawEnforcementDB.csproj", "{38C9F101-C934-43FD-B20A-8BCE2616BAD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{D58ABA88-C99A-4F56-A7C8-35329113A45E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D58ABA88-C99A-4F56-A7C8-35329113A45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D58ABA88-C99A-4F56-A7C8-35329113A45E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE26BA93-B9AA-4586-8667-574E08B1F23A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE26BA93-B9AA-4586-8667-574E08B1F23A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE26BA93-B9AA-4586-8667-574E08B1F23A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE26BA93-B9AA-4586-8667-574E08B1F23A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C9F101-C934-43FD-B20A-8BCE2616BAD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C9F101-C934-43FD-B20A-8BCE2616BAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C9F101-C934-43FD-B20A-8BCE2616BAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C9F101-C934-43FD-B20A-8BCE2616BAD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
