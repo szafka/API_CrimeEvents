@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddProfilesCollection();
 builder.Services.AddScopedConfiguration();
+
 builder.Services.Configure<CrimeEventDBSettings>(
     builder.Configuration.GetSection("CrimesStoreDB"));
 
