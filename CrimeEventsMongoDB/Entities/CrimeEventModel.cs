@@ -13,7 +13,7 @@ namespace CrimeEventsMongoDB.Entities
         public string Description { get; set; } = null!;
         public string PlaceOfEvent { get; set; } = null!;
         public DateTime? DateOfReport { get; set; }
-        public Enum? Status { get; set; }
+        public CrimeEventStatus? Status { get; set; }
         public string Email { get; set; } = null!;
         public string LawEnforcementID { get; set; } = null!;
         public CrimeEventModel()

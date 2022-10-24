@@ -16,7 +16,11 @@ namespace CrimeEventsMongoDB.DAL.Repositories
             _crimeEvents = mongoDatabase.GetCollection<CrimeEventModel>(crimesCollection.Value.CrimeCollectionName);
         }
 
-        public async Task AddItemAsync(CrimeEventModel newModel) => await _crimeEvents.InsertOneAsync(newModel);
+        public async Task AddItemAsync(CrimeEventModel newModel)
+        {
+            var newEvent = newModel with { Status = CrimeEventStatus.Waiting };
+            await _crimeEvents.InsertOneAsync(newEvent);
+        }
         public async Task<IEnumerable<CrimeEventModel>> GetItemsAsync() => await _crimeEvents.Find(_ => true).ToListAsync();
         public Task<IEnumerable<CrimeEventModel>> GetEventStatsAsync()
         {
