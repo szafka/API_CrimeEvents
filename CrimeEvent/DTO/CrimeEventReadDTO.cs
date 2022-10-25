@@ -1,4 +1,5 @@
 ﻿using CrimeEventsMongoDB.Entities;
+using System.Text.Json.Serialization;
 
 namespace CrimeEvent.DTO
 {
@@ -8,6 +9,7 @@ namespace CrimeEvent.DTO
         public string Description { get; set; } = null!;
         public string PlaceOfEvent { get; set; } = null!;
         public DateTime? DateOfReport { get; set; }
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public CrimeEventStatus? Status { get; set; }
         public string LawEnforcementID { get; set; } = null!;
     }
