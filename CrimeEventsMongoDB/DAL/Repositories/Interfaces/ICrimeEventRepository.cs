@@ -7,5 +7,6 @@ namespace CrimeEventsMongoDB.DAL.Repositories.Interfaces
         Task AddItemAsync(CrimeEventModel newModel);
         Task<IEnumerable<CrimeEventModel>> GetItemsAsync();
         Task<IEnumerable<CrimeEventModel>> GetEventStatsAsync();
+        Task DeleteAllAsync();
     }
 }

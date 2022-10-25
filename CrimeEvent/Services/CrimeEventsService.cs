@@ -22,6 +22,11 @@ namespace CrimeEvent.Services
             await _repository.AddItemAsync(newCrimeEvent);
         }
 
+        public async Task DeleteAllAsync()
+        {
+            await _repository.DeleteAllAsync();
+        }
+
         public async Task<IEnumerable<CrimeEventReadDTO>> GetAllAsync()
         {
             var crimeEvents = await _repository.GetItemsAsync();

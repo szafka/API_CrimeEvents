@@ -26,5 +26,7 @@ namespace CrimeEventsMongoDB.DAL.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public async Task DeleteAllAsync() => await _crimeEvents.DeleteManyAsync(_ => true);
     }
 }

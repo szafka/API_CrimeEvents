@@ -22,6 +22,11 @@ namespace LawEnforcement.Services
             await _repository.AddEnforcementAsync(newEnforcement);
         }
 
+        public async Task DeleteAllAsync()
+        {
+            await _repository.DeleteAllAsync();
+        }
+
         public async Task<IEnumerable<LawEnforcementReadDTO>> GetAllAsync()
         {
             var enforcementList = await _repository.GetAllEnforcementsAsync();

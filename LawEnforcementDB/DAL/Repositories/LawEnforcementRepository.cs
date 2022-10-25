@@ -19,6 +19,15 @@ namespace LawEnforcementSqlDB.DAL.Repositories
             await _context.AddAsync(newModel);
             await _context.SaveChangesAsync();
         }
+
+        public async Task DeleteAllAsync()
+        {
+            foreach(var data in _context.LawEnforcementModels)
+            {
+                _context.Remove(data);
+            }
+            _context.SaveChanges();
+        }
         public async Task<IEnumerable<LawEnforcementModel>> GetAllEnforcementsAsync()
         {
             var events = from entry in _context.LawEnforcementModels select entry;

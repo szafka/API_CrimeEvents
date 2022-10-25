@@ -6,5 +6,6 @@ namespace LawEnforcementSqlDB.DAL.Repositories.Interfaces
     {
         Task AddEnforcementAsync(LawEnforcementModel model);
         Task<IEnumerable<LawEnforcementModel>> GetAllEnforcementsAsync();
+        Task DeleteAllAsync();
     }
 }

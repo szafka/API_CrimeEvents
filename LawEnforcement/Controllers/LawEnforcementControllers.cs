@@ -38,5 +38,15 @@ namespace LawEnforcement.Controllers
             _logger.LogInformation(Ok().StatusCode.ToString());
             return Ok(createDTO);
         }
+        [HttpDelete]
+        public async Task<IActionResult> RemoveAllAsync(string password)
+        {
+            if (password.Equals("delete"))
+            {
+                await _service.DeleteAllAsync();
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }

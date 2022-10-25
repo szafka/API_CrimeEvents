@@ -6,5 +6,6 @@ namespace LawEnforcement.Services.Interfaces
     {
         Task<IEnumerable<LawEnforcementReadDTO>> GetAllAsync();
         Task AddNewEnforcement(LawEnforcementCreateDTO createDTO);
+        Task DeleteAllAsync();
     }
 }
