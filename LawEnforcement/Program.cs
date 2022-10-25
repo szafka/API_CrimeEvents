@@ -1,3 +1,4 @@
+using LawEnforcement;
 using LawEnforcementSqlDB.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddProfilesCollection();
+builder.Services.AddScopedConfiguration();
 
 var app = builder.Build();
 

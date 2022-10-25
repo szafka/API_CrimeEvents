@@ -16,6 +16,8 @@ namespace LawEnforcement.Controllers
             _logger = logger;
             _service = service;
         }
+        [SwaggerOperation(Summary = "Get all enforcement")]
+        [HttpGet]
         public async Task<IActionResult> GetAllEnforcementsAsync()
         {
             var events = await _service.GetAllAsync();
