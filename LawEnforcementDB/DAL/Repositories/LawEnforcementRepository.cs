@@ -15,7 +15,7 @@ namespace LawEnforcementSqlDB.DAL.Repositories
         public async Task AddEnforcementAsync(LawEnforcementModel model)
         {
             string id = await IdGenerator();
-            var newModel = model with { EnforcementId = id };
+            var newModel = model with { LawEnforcementID = id };
             await _context.AddAsync(newModel);
             await _context.SaveChangesAsync();
         }
@@ -40,7 +40,7 @@ namespace LawEnforcementSqlDB.DAL.Repositories
             {
                 string randomId = Guid.NewGuid().ToString();
                 numberToBase = randomId.Substring(0, 8);
-                var numberFromBase = await _context.LawEnforcementModels.FirstOrDefaultAsync(c => c.EnforcementId == numberToBase);
+                var numberFromBase = await _context.LawEnforcementModels.FirstOrDefaultAsync(c => c.LawEnforcementID == numberToBase);
                 if (numberFromBase == null)
                     return numberToBase;
             }while (false);

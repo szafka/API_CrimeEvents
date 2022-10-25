@@ -18,7 +18,6 @@ namespace CrimeEventsMongoDB.Entities
         public string LawEnforcementID { get; set; } = null!;
         public CrimeEventModel()
         {
-            DateOfReport = DateTime.Now;
         }
     }
 }

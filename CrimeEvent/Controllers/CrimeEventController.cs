@@ -5,13 +5,13 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace CrimeEvent.Controllers
 {
-    [Route("api/CrimeControllers")]
+    [Route("api/CrimeEventController")]
     [ApiController]
-    public class CrimeControllers : ControllerBase
+    public class CrimeEventController : ControllerBase
     {
-        public readonly ILogger<CrimeControllers> _logger;
+        public readonly ILogger<CrimeEventController> _logger;
         public readonly ICrimeEventsService _service;
-        public CrimeControllers(ILogger<CrimeControllers> logger, ICrimeEventsService service)
+        public CrimeEventController(ILogger<CrimeEventController> logger, ICrimeEventsService service)
         {
             _logger = logger;
             _service = service;
@@ -36,8 +36,10 @@ namespace CrimeEvent.Controllers
         {
             await _service.AddNewEvent(createDTO);
             _logger.LogInformation(Ok().StatusCode.ToString());
+            Task assigmentTask = Task.Run(() => _service.Assigning(createDTO));
             return Ok(createDTO);
         }
+
         [HttpDelete]
         public async Task<IActionResult> RemoveAllAsync(string password)
         {

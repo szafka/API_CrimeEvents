@@ -5,13 +5,13 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace LawEnforcement.Controllers
 {
-    [Route("api/LawEnforcementControllers")]
+    [Route("api/LawEnforcementController")]
     [ApiController]
-    public class LawEnforcementControllers : ControllerBase
+    public class LawEnforcementController : ControllerBase
     {
-        public readonly ILogger<LawEnforcementControllers> _logger;
+        public readonly ILogger<LawEnforcementController> _logger;
         public readonly ILawEnforcementService _service;
-        public LawEnforcementControllers(ILogger<LawEnforcementControllers> logger, ILawEnforcementService service)
+        public LawEnforcementController(ILogger<LawEnforcementController> logger, ILawEnforcementService service)
         {
             _logger = logger;
             _service = service;

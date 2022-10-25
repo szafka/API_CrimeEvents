@@ -1,4 +1,4 @@
-﻿namespace LawEnforcement.DTO
+﻿namespace CrimeEvent.DTO
 {
     public class LawEnforcementReadDTO
     {

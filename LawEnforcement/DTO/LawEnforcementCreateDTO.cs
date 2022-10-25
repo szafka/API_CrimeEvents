@@ -4,7 +4,7 @@ namespace LawEnforcement.DTO
 {
     public class LawEnforcementCreateDTO
     {
-        [StringLength(15, MinimumLength = 1)]
+        [StringLength(8, MinimumLength = 7)]
         public string EnforcementRank { get; set; } = null!;
     }
 }

@@ -8,8 +8,8 @@ namespace LawEnforcementSqlDB.Entities
     {
         [Key]
         [StringLength(8, MinimumLength = 7)]
-        public string EnforcementId { get; set; } = null!;
-        [StringLength(15, MinimumLength = 1)]
+        public string LawEnforcementID { get; set; } = null!;
+        [StringLength(25, MinimumLength = 1)]
         public string EnforcementRank { get; set; } = null!;
         public ICollection<CrimeEventModel> CrimeEventList { get; set; } = null!;
     }

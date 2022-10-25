@@ -8,7 +8,7 @@ namespace LawEnforcementSqlDB.Context.Seeder.Data
         public static void SeedLawEnforcement(this ModelBuilder modelBuilder)
         {
             List<LawEnforcementModel> lawEnforcementModels = new List<LawEnforcementModel>();
-            string[] fileLines = File.ReadAllLines("../LawEnforcementSqlDB/Context/Seeder/Data/LawEnforcementData.txt");
+            string[] fileLines = File.ReadAllLines("../LawEnforcementDB/Context/Seeder/Data/LawEnforcementData.txt");
             foreach (string line in fileLines.Skip(1))
             {
                 var item = GetItemFromLine(line);
@@ -22,7 +22,7 @@ namespace LawEnforcementSqlDB.Context.Seeder.Data
             string[] item = line.Split('|');
             string id = item[0];
             string rank = item[1];
-            return new LawEnforcementModel() { EnforcementId = id, EnforcementRank = rank };
+            return new LawEnforcementModel() { LawEnforcementID = id, EnforcementRank = rank };
         }
     }
 }
