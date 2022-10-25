@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<LawEnforcementContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("LawEnforcementDB")));
+builder.Services.AddDbContext<LawEnforcementContext>(options => options.UseSqlServer(builder.Configuration["ConnectionStrings:DBLawEnforcement"]));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -26,7 +26,7 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-app.ApplyPendingMigrations();
 app.MapControllers();
+app.ApplyPendingMigrations();
 
 app.Run();

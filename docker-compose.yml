@@ -6,18 +6,22 @@ services:
     build:
       context: .
       dockerfile: CrimeEvent/Dockerfile
-  
+    depends_on:
+      - db
+      
   lawenforcement:
     image: ${DOCKER_REGISTRY-}lawenforcement
     build:
       context: .
       dockerfile: LawEnforcement/Dockerfile
+    depends_on:
+      - db
 
   mongo:
-   image: mongo
-   restart: always
-   ports:
-     - 27017:27017
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
 
   db:
     image: "mcr.microsoft.com/mssql/server:2019-latest"

@@ -8,21 +8,18 @@ namespace LawEnforcementDB.Context.Seeder.Data
         public static void SeedLawEnforcement(this ModelBuilder modelBuilder)
         {
             List<LawEnforcementModel> lawEnforcementModels = new List<LawEnforcementModel>();
-            string[] fileLines = File.ReadAllLines("../LawEnforcementDB/Context/Seeder/Data/LawEnforcementData.txt");
-            foreach (string line in fileLines.Skip(1))
-            {
-                var item = GetItemFromLine(line);
-                lawEnforcementModels.Add(item);
-            }
-            modelBuilder.Entity<LawEnforcementModel>().HasData(lawEnforcementModels);
-        }
 
-        private static LawEnforcementModel GetItemFromLine(string line)
-        {
-            string[] item = line.Split('|');
-            string id = item[0];
-            string rank = item[1];
-            return new LawEnforcementModel() { LawEnforcementID = id, EnforcementRank = rank };
+            lawEnforcementModels.Add(new LawEnforcementModel() { LawEnforcementID = "AAS11421", EnforcementRank = "SERGEANT" });
+            lawEnforcementModels.Add(new LawEnforcementModel() { LawEnforcementID = "AGF66633", EnforcementRank = "LIEUTENANT" });
+            lawEnforcementModels.Add(new LawEnforcementModel() { LawEnforcementID = "ANC66431", EnforcementRank = "CAPTAIN" });
+            lawEnforcementModels.Add(new LawEnforcementModel() { LawEnforcementID = "AZZ33405", EnforcementRank = "CORPORAL" });
+            lawEnforcementModels.Add(new LawEnforcementModel() { LawEnforcementID = "GDS11643", EnforcementRank = "PATROL OFFICER" });
+            lawEnforcementModels.Add(new LawEnforcementModel() { LawEnforcementID = "HJS18891", EnforcementRank = "POLICE DETECTIVE" });
+            lawEnforcementModels.Add(new LawEnforcementModel() { LawEnforcementID = "LUS33721", EnforcementRank = "SERGEANT" });
+            lawEnforcementModels.Add(new LawEnforcementModel() { LawEnforcementID = "EES11521", EnforcementRank = "LIEUTENANT" });
+            lawEnforcementModels.Add(new LawEnforcementModel() { LawEnforcementID = "XVS16321", EnforcementRank = "LIEUTENANT" });
+
+            modelBuilder.Entity<LawEnforcementModel>().HasData(lawEnforcementModels);
         }
     }
 }
