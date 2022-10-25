@@ -2,7 +2,7 @@
 using LawEnforcementDB.Entities;
 using System.ComponentModel.DataAnnotations;
 
-namespace LawEnforcementSqlDB.Entities
+namespace LawEnforcementDB.Entities
 {
     public record LawEnforcementModel
     {

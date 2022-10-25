@@ -1,8 +1,8 @@
-﻿using LawEnforcementSqlDB.Context.Seeder.Data;
-using LawEnforcementSqlDB.Entities;
+﻿using LawEnforcementDB.Context.Seeder.Data;
+using LawEnforcementDB.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace LawEnforcementSqlDB.Context
+namespace LawEnforcementDB.Context
 {
     public class LawEnforcementContext : DbContext
     {

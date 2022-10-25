@@ -1,9 +1,9 @@
-﻿using LawEnforcementSqlDB.Context;
-using LawEnforcementSqlDB.DAL.Repositories.Interfaces;
-using LawEnforcementSqlDB.Entities;
+﻿using LawEnforcementDB.Context;
+using LawEnforcementDB.DAL.Repositories.Interfaces;
+using LawEnforcementDB.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace LawEnforcementSqlDB.DAL.Repositories
+namespace LawEnforcementDB.DAL.Repositories
 {
     public class LawEnforcementRepository : ILawEnforcementRepository
     {

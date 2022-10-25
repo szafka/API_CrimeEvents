@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using LawEnforcement.DTO;
-using LawEnforcementSqlDB.Entities;
+using LawEnforcementDB.Entities;
 
 namespace LawEnforcement.Profiles
 {

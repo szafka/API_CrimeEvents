@@ -1,8 +1,8 @@
 ﻿using LawEnforcement.Profiles;
 using LawEnforcement.Services;
 using LawEnforcement.Services.Interfaces;
-using LawEnforcementSqlDB.DAL.Repositories;
-using LawEnforcementSqlDB.DAL.Repositories.Interfaces;
+using LawEnforcementDB.DAL.Repositories;
+using LawEnforcementDB.DAL.Repositories.Interfaces;
 
 namespace LawEnforcement
 {

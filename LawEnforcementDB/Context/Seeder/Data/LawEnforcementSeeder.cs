@@ -1,7 +1,7 @@
-﻿using LawEnforcementSqlDB.Entities;
+﻿using LawEnforcementDB.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace LawEnforcementSqlDB.Context.Seeder.Data
+namespace LawEnforcementDB.Context.Seeder.Data
 {
     public static class LawEnforcementSeeder
     {

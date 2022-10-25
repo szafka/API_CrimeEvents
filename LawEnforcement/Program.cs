@@ -1,12 +1,11 @@
 using LawEnforcement;
-using LawEnforcementSqlDB.Context;
+using LawEnforcementDB.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("LawEnforcementDB");
-builder.Services.AddDbContext<LawEnforcementContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<LawEnforcementContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("LawEnforcementDB")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -18,16 +17,16 @@ builder.Services.AddScopedConfiguration();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+app.ApplyPendingMigrations();
 app.MapControllers();
 
 app.Run();

@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using LawEnforcement.DTO;
 using LawEnforcement.Services.Interfaces;
-using LawEnforcementSqlDB.DAL.Repositories.Interfaces;
-using LawEnforcementSqlDB.Entities;
+using LawEnforcementDB.DAL.Repositories.Interfaces;
+using LawEnforcementDB.Entities;
 
 namespace LawEnforcement.Services
 {

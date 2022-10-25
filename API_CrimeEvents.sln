@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrimeEvent", "CrimeEvent\CrimeEvent.csproj", "{79196B35-91AD-4E0B-A618-3C30D5267CD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrimeEvent", "CrimeEvent\CrimeEvent.csproj", "{79196B35-91AD-4E0B-A618-3C30D5267CD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrimeEventsMongoDB", "CrimeEventsMongoDB\CrimeEventsMongoDB.csproj", "{D58ABA88-C99A-4F56-A7C8-35329113A45E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrimeEventsMongoDB", "CrimeEventsMongoDB\CrimeEventsMongoDB.csproj", "{D58ABA88-C99A-4F56-A7C8-35329113A45E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawEnforcement", "LawEnforcement\LawEnforcement.csproj", "{AE26BA93-B9AA-4586-8667-574E08B1F23A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LawEnforcement", "LawEnforcement\LawEnforcement.csproj", "{AE26BA93-B9AA-4586-8667-574E08B1F23A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LawEnforcementDB", "LawEnforcementDB\LawEnforcementDB.csproj", "{38C9F101-C934-43FD-B20A-8BCE2616BAD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LawEnforcementDB", "LawEnforcementDB\LawEnforcementDB.csproj", "{38C9F101-C934-43FD-B20A-8BCE2616BAD5}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E386C7D8-0030-48A7-98E4-DC88CC9B4C88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{38C9F101-C934-43FD-B20A-8BCE2616BAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38C9F101-C934-43FD-B20A-8BCE2616BAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38C9F101-C934-43FD-B20A-8BCE2616BAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E386C7D8-0030-48A7-98E4-DC88CC9B4C88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E386C7D8-0030-48A7-98E4-DC88CC9B4C88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E386C7D8-0030-48A7-98E4-DC88CC9B4C88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E386C7D8-0030-48A7-98E4-DC88CC9B4C88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

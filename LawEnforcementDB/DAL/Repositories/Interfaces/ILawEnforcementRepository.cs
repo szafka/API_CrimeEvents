@@ -1,6 +1,6 @@
-﻿using LawEnforcementSqlDB.Entities;
+﻿using LawEnforcementDB.Entities;
 
-namespace LawEnforcementSqlDB.DAL.Repositories.Interfaces
+namespace LawEnforcementDB.DAL.Repositories.Interfaces
 {
     public interface ILawEnforcementRepository
     {
