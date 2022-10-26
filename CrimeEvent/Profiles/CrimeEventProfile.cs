@@ -10,7 +10,7 @@ namespace CrimeEvent.Profiles
         {
             CreateMap<CrimeEventModel, CrimeEventReadDTO>();
             CreateMap<CrimeEventCreateDTO, CrimeEventModel>();
-            CreateMap<CrimeEventUpdateDTO, CrimeEventModel>();
+            CreateMap<CrimeEventWithEnforcementCreateDTO, CrimeEventModel>();
         }
     }
 }

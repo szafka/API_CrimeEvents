@@ -1,6 +1,6 @@
 ﻿namespace CrimeEvent.DTO
 {
-    public class CrimeEventUpdateDTO
+    public class CrimeEventWithEnforcementCreateDTO
     {
         public string TypeOfEvent { get; set; } = null!;
         public string Description { get; set; } = null!;
