@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace CrimeEvent.Middleware
+namespace LawEnforcement.Middleware
 {
     public class ErrorHandling : IMiddleware
     {

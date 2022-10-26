@@ -38,7 +38,7 @@ namespace CrimeEvent.Controllers
             _logger.LogInformation(Ok().StatusCode.ToString());
             return Ok(createDTO);
         }
-
+        [SwaggerOperation(Summary = "Delete all data")]
         [HttpDelete]
         public async Task<IActionResult> RemoveAllAsync(string password)
         {
