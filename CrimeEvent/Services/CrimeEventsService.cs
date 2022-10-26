@@ -18,10 +18,23 @@ namespace CrimeEvent.Services
 
         public async Task AddNewEvent(CrimeEventCreateDTO createDTO)
         {
-            var newCrimeEvent = _mapper.Map<CrimeEventModel>(createDTO);
+            var client = _httpFactory.CreateClient("Gateway");
+            var enforcementsList = await client.GetFromJsonAsync<IEnumerable<LawEnforcementReadDTO>>($"api/LawEnforcementController/");
+            var rnd = _random.Next(enforcementsList.Count());
+            string enforcementToAssign = enforcementsList.ElementAt(rnd).LawEnforcementID.ToString();
+
+            var assignedCrimeEvent = new CrimeEventWithEnforcementCreateDTO
+            {
+                Description = createDTO.Description,
+                Email = createDTO.Email,
+                PlaceOfEvent = createDTO.PlaceOfEvent,
+                TypeOfEvent = createDTO.TypeOfEvent,
+                DateOfReport = createDTO.DateOfReport,
+                LawEnforcementID = enforcementToAssign
+            };
+            var newCrimeEvent = _mapper.Map<CrimeEventModel>(assignedCrimeEvent);
             await _repository.AddItemAsync(newCrimeEvent);
         }
-
         public async Task DeleteAllAsync()
         {
             await _repository.DeleteAllAsync();
