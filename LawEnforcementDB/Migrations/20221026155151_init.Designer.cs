@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LawEnforcementDB.Migrations
 {
     [DbContext(typeof(LawEnforcementContext))]
-    [Migration("20221025210004_initial")]
-    partial class initial
+    [Migration("20221026155151_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,10 +23,14 @@ namespace LawEnforcementDB.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("LawEnforcementDB.Entities.CrimeEventModel", b =>
+            modelBuilder.Entity("LawEnforcementDB.Entities.CrimeEvent", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LawEnforcementId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LawEnforcementModelLawEnforcementID")
                         .HasColumnType("nvarchar(8)");
@@ -35,7 +39,7 @@ namespace LawEnforcementDB.Migrations
 
                     b.HasIndex("LawEnforcementModelLawEnforcementID");
 
-                    b.ToTable("CrimeEventModel");
+                    b.ToTable("CrimeEvents");
                 });
 
             modelBuilder.Entity("LawEnforcementDB.Entities.LawEnforcementModel", b =>
@@ -101,7 +105,7 @@ namespace LawEnforcementDB.Migrations
                         });
                 });
 
-            modelBuilder.Entity("LawEnforcementDB.Entities.CrimeEventModel", b =>
+            modelBuilder.Entity("LawEnforcementDB.Entities.CrimeEvent", b =>
                 {
                     b.HasOne("LawEnforcementDB.Entities.LawEnforcementModel", null)
                         .WithMany("CrimeEventList")

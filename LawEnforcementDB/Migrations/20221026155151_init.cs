@@ -4,7 +4,7 @@
 
 namespace LawEnforcementDB.Migrations
 {
-    public partial class initial : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,17 +21,18 @@ namespace LawEnforcementDB.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CrimeEventModel",
+                name: "CrimeEvents",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LawEnforcementId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LawEnforcementModelLawEnforcementID = table.Column<string>(type: "nvarchar(8)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CrimeEventModel", x => x.Id);
+                    table.PrimaryKey("PK_CrimeEvents", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_CrimeEventModel_LawEnforcementModels_LawEnforcementModelLawEnforcementID",
+                        name: "FK_CrimeEvents_LawEnforcementModels_LawEnforcementModelLawEnforcementID",
                         column: x => x.LawEnforcementModelLawEnforcementID,
                         principalTable: "LawEnforcementModels",
                         principalColumn: "LawEnforcementID");
@@ -54,15 +55,15 @@ namespace LawEnforcementDB.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CrimeEventModel_LawEnforcementModelLawEnforcementID",
-                table: "CrimeEventModel",
+                name: "IX_CrimeEvents_LawEnforcementModelLawEnforcementID",
+                table: "CrimeEvents",
                 column: "LawEnforcementModelLawEnforcementID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CrimeEventModel");
+                name: "CrimeEvents");
 
             migrationBuilder.DropTable(
                 name: "LawEnforcementModels");

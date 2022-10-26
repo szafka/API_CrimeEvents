@@ -10,10 +10,13 @@ namespace CrimeEvent.Services
     {
         private readonly ICrimeEventRepository _repository;
         private readonly IMapper _mapper;
+        private readonly IHttpClientFactory _httpFactory;
+        private readonly Random _random = new();
         public CrimeEventsService(ICrimeEventRepository repository, IMapper mapper, IHttpClientFactory httpFactory)
         {
             _repository = repository;
             _mapper = mapper;
+            _httpFactory = httpFactory;
         }
 
         public async Task AddNewEvent(CrimeEventCreateDTO createDTO)
@@ -34,6 +37,11 @@ namespace CrimeEvent.Services
             };
             var newCrimeEvent = _mapper.Map<CrimeEventModel>(assignedCrimeEvent);
             await _repository.AddItemAsync(newCrimeEvent);
+
+            var officerUpdate = new LawEnforcementUpdateDTO { LawEnforcementID = enforcementToAssign, Id = newCrimeEvent.Id };
+
+            await client.PutAsJsonAsync($"api/LawEnforcementController/assignEvent", officerUpdate);
+
         }
         public async Task DeleteAllAsync()
         {

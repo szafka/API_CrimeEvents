@@ -18,8 +18,8 @@ namespace CrimeEventsMongoDB.DAL.Repositories
 
         public async Task AddItemAsync(CrimeEventModel newModel)
         {
-            var newEvent = newModel with { Status = CrimeEventStatus.Waiting };
-            await _crimeEvents.InsertOneAsync(newEvent);
+            newModel.Status = CrimeEventStatus.Waiting;
+            await _crimeEvents.InsertOneAsync(newModel);
         }
         public async Task<IEnumerable<CrimeEventModel>> GetItemsAsync() => await _crimeEvents.Find(_ => true).ToListAsync();
 

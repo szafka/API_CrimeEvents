@@ -1,6 +1,4 @@
-﻿
-using LawEnforcementDB.Entities;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace LawEnforcementDB.Entities
 {
@@ -11,6 +9,6 @@ namespace LawEnforcementDB.Entities
         public string LawEnforcementID { get; set; } = null!;
         [StringLength(25, MinimumLength = 1)]
         public string EnforcementRank { get; set; } = null!;
-        public ICollection<CrimeEventModel> CrimeEventList { get; set; } = null!;
+        public ICollection<CrimeEvent> CrimeEventList { get; set; } = null!;
     }
 }

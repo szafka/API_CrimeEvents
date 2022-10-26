@@ -22,6 +22,12 @@ namespace LawEnforcement.Services
             await _repository.AddEnforcementAsync(newEnforcement);
         }
 
+        public async Task AssignEventAsync(LawEnforcementUpdateDTO updateDTO)
+        {
+            var crimeEvent = new CrimeEvent { Id = updateDTO.Id, LawEnforcementModelLawEnforcementID = updateDTO.LawEnforcementID };
+            await _repository.AddCrimeEventAsync(crimeEvent);
+        }
+
         public async Task DeleteAllAsync()
         {
             await _repository.DeleteAllAsync();

@@ -12,6 +12,13 @@ namespace LawEnforcementDB.DAL.Repositories
         {
             _context = context;
         }
+
+        public async Task AddCrimeEventAsync(CrimeEvent model)
+        {
+            _context.CrimeEvents.Add(model);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task AddEnforcementAsync(LawEnforcementModel model)
         {
             string id = await IdGenerator();
@@ -30,7 +37,7 @@ namespace LawEnforcementDB.DAL.Repositories
         }
         public async Task<IEnumerable<LawEnforcementModel>> GetAllEnforcementsAsync()
         {
-            var events = from entry in _context.LawEnforcementModels select entry;
+            var events = await _context.LawEnforcementModels.Include(c => c.CrimeEventList).AsNoTracking().ToListAsync();
             return events;
         }
         private async Task<string> IdGenerator()

@@ -30,6 +30,13 @@ namespace LawEnforcement.Controllers
             return Ok(events);
         }
 
+        [HttpPut("assignEvent")]
+        public async Task<IActionResult> AssignEventToOfficerAsync(LawEnforcementUpdateDTO updateDTO)
+        {
+            await _service.AssignEventAsync(updateDTO);
+            return Ok();
+        }
+
         [SwaggerOperation(Summary = "Add new law enforcement")]
         [HttpPost]
         public async Task<IActionResult> AddNewEnforcementAsync(LawEnforcementCreateDTO createDTO)

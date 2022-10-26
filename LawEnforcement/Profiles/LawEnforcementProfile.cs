@@ -8,10 +8,9 @@ namespace LawEnforcement.Profiles
     {
         public LawEnforcementProfile()
         {
-            CreateMap<LawEnforcementModel, LawEnforcementReadDTO>();
+            CreateMap<LawEnforcementModel, LawEnforcementReadDTO>()
+                .ForMember(x => x.CrimeEventList, opt => opt.MapFrom(e => e.CrimeEventList.Select(c => c.Id)));;
             CreateMap<LawEnforcementCreateDTO, LawEnforcementModel>();
-            CreateMap<LawEnforcementModel, LawEnforcementEventsReadDTO>()
-                .ForMember(x => x.CrimeEventList, opt => opt.MapFrom(e => e.CrimeEventList.Select(c => c.Id)));
         }
     }
 }
