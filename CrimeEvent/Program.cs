@@ -1,6 +1,8 @@
 using CrimeEvent;
+using CrimeEvent.Middleware;
 using CrimeEventsMongoDB.MongoDBSettings;
 using Microsoft.Net.Http.Headers;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddProfilesCollection();
 builder.Services.AddScopedConfiguration();
+builder.Services.AddScoped<ErrorHandling>();
 
 builder.Services.Configure<CrimeEventDBSettings>(
     builder.Configuration.GetSection("CrimesStoreDB"));
@@ -22,6 +25,13 @@ builder.Services.AddHttpClient("Gateway", httpClient =>
         HeaderNames.Accept, "application/json");
 });
 
+var logger = new LoggerConfiguration()
+              .ReadFrom.Configuration(builder.Configuration)
+              .Enrich.FromLogContext()
+              .CreateLogger();
+builder.Logging.ClearProviders();
+builder.Logging.AddSerilog(logger);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -30,7 +40,7 @@ var app = builder.Build();
     app.UseSwagger();
     app.UseSwaggerUI();
 //}
-
+app.UseMiddleware<ErrorHandling>();
 app.UseAuthorization();
 
 app.MapControllers();
