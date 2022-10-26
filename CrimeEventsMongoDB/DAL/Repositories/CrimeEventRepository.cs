@@ -24,13 +24,5 @@ namespace CrimeEventsMongoDB.DAL.Repositories
         public async Task<IEnumerable<CrimeEventModel>> GetItemsAsync() => await _crimeEvents.Find(_ => true).ToListAsync();
 
         public async Task DeleteAllAsync() => await _crimeEvents.DeleteManyAsync(_ => true);
-
-        public async Task UpdateItemAsync(CrimeEventModel newModel) => _crimeEvents.ReplaceOne(c => 
-        (
-            c.PlaceOfEvent == newModel.PlaceOfEvent &&
-            c.TypeOfEvent == newModel.PlaceOfEvent &&
-            c.DateOfReport == newModel.DateOfReport &&
-            c.Description == newModel.Description
-        ), newModel);
     }
 }

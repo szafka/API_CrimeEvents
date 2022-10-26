@@ -7,6 +7,5 @@ namespace CrimeEvent.Services.Interfaces
         Task AddNewEvent(CrimeEventCreateDTO createDTO);
         Task<IEnumerable<CrimeEventReadDTO>> GetAllAsync();
         Task DeleteAllAsync();
-        Task Assigning(CrimeEventCreateDTO createDTO);
     }
 }

@@ -36,7 +36,6 @@ namespace CrimeEvent.Controllers
         {
             await _service.AddNewEvent(createDTO);
             _logger.LogInformation(Ok().StatusCode.ToString());
-            Task assigmentTask = Task.Run(() => _service.Assigning(createDTO));
             return Ok(createDTO);
         }
 
